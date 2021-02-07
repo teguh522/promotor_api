@@ -11,7 +11,7 @@ app.use(urlencoded({ extended: true }))
 
 app.use('/auth', route.getauth)
 app.use('/home', middleware.cektoken, route.getdashboard)
-app.use('/tugas', middleware.cektoken, route.gettugas)
+app.use('/tugas', route.gettugas)
 
 app.use((req, res, next) => {
     let err = new Error('Tidak ditemukan')
